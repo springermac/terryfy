@@ -165,6 +165,7 @@ function brew_install_python {
     local py_version=$1
     local py_digit=${py_version:0:1}
     if [[ "$py_digit" == "3" ]] ; then
+        brew uninstall --force --ignore-dependencies python
         brew install python@3
     else
         brew uninstall --force --ignore-dependencies python
