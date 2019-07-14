@@ -110,7 +110,7 @@ function install_macports {
     local macports_pkg=MacPorts-$MACPORTS_VERSION-${vers_name}.pkg
     local macports_path=$DOWNLOADS_SDIR/$macports_pkg
     mkdir -p $DOWNLOADS_SDIR
-    curl -L $MACPORTS_URL/$macports_pkg > $macports_path
+    curl -L $MACPORTS_URL/$macports_pkg -o $macports_path
     require_success "failed to download macports"
     sudo installer -pkg $macports_path -target /
     require_success "failed to install macports"
